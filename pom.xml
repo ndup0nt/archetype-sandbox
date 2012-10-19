@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2000 - 2011 Silverpeas This program is free software: 
+	you can redistribute it and/or modify it under the terms of the GNU Affero 
+	General Public License as published by the Free Software Foundation, either 
+	version 3 of the License, or (at your option) any later version. As a special 
+	exception to the terms and conditions of version 3.0 of the GPL, you may 
+	redistribute this Program in connection with Free/Libre Open Source Software 
+	("FLOSS") applications as described in Silverpeas's FLOSS exception. You 
+	should have recieved a copy of the text describing the FLOSS exception, and 
+	it is also available here: "http://www.silverpeas.com/legal/licensing" This 
+	program is distributed in the hope that it will be useful, but WITHOUT ANY 
+	WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+	FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more 
+	details. You should have received a copy of the GNU Affero General Public 
+	License along with this program. If not, see <http://www.gnu.org/licenses />. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.silverpeas</groupId>
+		<artifactId>components</artifactId>
+		<version>5.10.1</version>
+	</parent>
+
+	<groupId>com.silverpeas.components.oosphere</groupId>
+	<artifactId>blankCmp</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>blankCmp</name>
+	
+    <modules>
+        <module>blankCmp-config</module>
+        <module>blankCmp-jar</module>
+        <module>blankCmp-war</module>
+    </modules>
+    
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.silverpeas.core</groupId>
+				<artifactId>lib-core</artifactId>
+				<version>${core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.silverpeas.core</groupId>
+				<artifactId>war-core</artifactId>
+				<type>war</type>
+				<version>${core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.silverpeas.core</groupId>
+				<artifactId>web-core</artifactId>
+				<version>${core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.silverpeas.components.oosphere.blankCmp</groupId>
+				<artifactId>blankCmp-config</artifactId>
+				<version>${project.version}</version>
+				<classifier>configuration</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.silverpeas.components.oosphere.blankCmp</groupId>
+				<artifactId>blankCmp-jar</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.silverpeas.components.oosphere.blankCmp</groupId>
+				<artifactId>blankCmp-war</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>com.silverpeas.core</groupId>
+				<artifactId>ws-test-core</artifactId>
+				<version>${core.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- see http://jira.codehaus.org/browse/JAXEN-217. Sans ces exclusions, pb dans Jenkins de CloudBees -->
+			<dependency>
+				<groupId>jaxen</groupId>
+				<artifactId>jaxen</artifactId>
+				<version>1.1.3</version>
+				<classifier>jdk6</classifier>
+				<exclusions>
+					<exclusion>
+						<groupId>maven-plugins</groupId>
+						<artifactId>maven-cobertura-plugin</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>maven-plugins</groupId>
+						<artifactId>maven-findbugs-plugin</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-client</artifactId>
+				<version>${jersey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-json</artifactId>
+				<version>${jersey.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.codehaus.jackson</groupId>
+						<artifactId>jackson-core-asl</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.codehaus.jackson</groupId>
+						<artifactId>jackson-mapper-asl</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<artifactId>jackson-jaxrs</artifactId>
+				<groupId>org.codehaus.jackson</groupId>
+				<version>${jackson.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.codehaus.jackson</groupId>
+						<artifactId>jackson-core-asl</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.codehaus.jackson</groupId>
+						<artifactId>jackson-mapper-asl</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>nl.jqno.equalsverifier</groupId>
+				<artifactId>equalsverifier</artifactId>
+				<version>1.1.3</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>oosphere-releases</id>
+            <name>Repository OOsphere</name>
+            <layout>default</layout>
+            <url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>oosphere-snapshots</id>
+            <name>Snapshots Repository OOsphere</name>
+            <layout>default</layout>
+            <url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
+	<repositories>
+		<repository>
+			<id>Silverpeas</id>
+			<layout>default</layout>
+			<name>Silverpeas Repository</name>
+			<url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>oosphere-releases</id>
+			<name>Repository OOsphere</name>
+			<layout>default</layout>
+			<url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/releases/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>oosphere-snapshots</id>
+			<name>Snapshots Repository OOsphere</name>
+			<layout>default</layout>
+			<url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+</project>
