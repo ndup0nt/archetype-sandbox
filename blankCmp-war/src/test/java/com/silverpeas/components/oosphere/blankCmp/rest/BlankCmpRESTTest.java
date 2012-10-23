@@ -92,7 +92,7 @@ public abstract class BlankCmpRESTTest extends
 
 	@Override
 	public final String[] getExistingComponentInstances() {
-		return getTestResources().myExistingComponentInstances();
+		return new String[]{BlankCmpTestResources.EXISTING_COMPONENT_ID};
 	}
 
 	protected ClientResponse post(final Object entity, String uri) {

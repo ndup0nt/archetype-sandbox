@@ -10,11 +10,8 @@ import com.silverpeas.web.TestResources;
 @Singleton
 public class BlankCmpTestResources extends TestResources{
     public static final String SPRING_CONTEXT = "blankCmp-test-context.xml";
-    public static final String REST_PACKAGE = "com.silverpeas.components.oosphere.blankCmp.blankStuff";
+    public static final String REST_PACKAGE = "com.silverpeas.components.oosphere.blankCmp";
     public static final String COMPONENT_NAME = "blankCmp";
-		
-	public String[] myExistingComponentInstances() {
-        return new String[]{"blabla1"};
-    }
+    public static final String EXISTING_COMPONENT_ID = "blankCmp1";
 
 }
