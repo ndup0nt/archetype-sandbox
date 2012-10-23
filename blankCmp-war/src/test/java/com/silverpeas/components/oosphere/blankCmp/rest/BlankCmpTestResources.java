@@ -13,5 +13,4 @@ public class BlankCmpTestResources extends TestResources{
     public static final String REST_PACKAGE = "com.silverpeas.components.oosphere.blankCmp";
     public static final String COMPONENT_NAME = "blankCmp";
     public static final String EXISTING_COMPONENT_ID = "blankCmp1";
-
 }

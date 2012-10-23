@@ -2,9 +2,7 @@ package com.silverpeas.components.oosphere.blankCmp.rest;
 
 import static com.silverpeas.components.oosphere.blankCmp.rest.BlankCmpTestResources.*;
 import static com.silverpeas.util.StringUtil.isDefined;
-import static org.junit.Assert.fail;
 
-import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -156,16 +154,6 @@ public abstract class BlankCmpRESTTest extends
 			Assert.fail("expected status: " + status.getStatusCode()
 					+ ", actual: " + response.getStatus() + ". Response: "
 					+ response.getEntity(String.class));
-		}
-	}
-
-	protected static void set(Object object, String fieldName, Object value) {
-		try {
-			Field theField = object.getClass().getDeclaredField(fieldName);
-			theField.setAccessible(true);
-			theField.set(object, value);
-		} catch (Exception e) {
-			fail();
 		}
 	}
 	
