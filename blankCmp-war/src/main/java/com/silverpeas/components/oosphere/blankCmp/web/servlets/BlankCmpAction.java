@@ -4,7 +4,8 @@ import com.silverpeas.webcore.Action;
 import com.silverpeas.webcore.ActionHandlerSupport;
 
 public enum BlankCmpAction implements Action {
-    MAIN("Main", new MainHandler());
+    MAIN("Main", new MainHandler()),
+    CREATE("Create", new CreateHandler());
     
     private final ActionHandlerSupport handler;
     private final String action;

@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.silverpeas.annotation.RequestScoped;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ import com.silverpeas.annotation.Authorized;
 import com.silverpeas.web.RESTWebService;
 
 @Service
-@Scope("request")
+@RequestScoped
 @Path("blankCmp/blankStuff")
 @Authorized
 public class BlankStuffResource extends RESTWebService {
@@ -42,6 +43,7 @@ public class BlankStuffResource extends RESTWebService {
     }
 
 	@Override
+    //user authorization will be checked among this component
 	public String getComponentId() {
 		//TODO get component id as a path template parameter or from a properties file
 		return "blankCmp1";

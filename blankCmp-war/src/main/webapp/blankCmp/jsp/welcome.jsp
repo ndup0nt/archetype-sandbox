@@ -1,3 +1,4 @@
+<%@ page import="com.silverpeas.components.oosphere.blankCmp.web.servlets.BlankCmpAction" %>
 <%--
 
     Copyright (C) 2000 - 2011 Silverpeas
@@ -37,8 +38,20 @@
 <body bgcolor="#ffffff" style="margin-left: 5px; margin-top: 5px;">
 	<c:set var="browseBarTitle">Welcome to BlankCmp</c:set>
 	<view:browseBar path="${browseBarTitle}" />
+    <view:operationPane>
+        <c:set var="createIcon">
+            <fmt:message key="blankCmp.createBlankStuff" bundle="${icons}" />
+        </c:set>
+        <c:set var="createText">
+            <fmt:message key="blankCmp.createBlankStuff.altText" />
+        </c:set>
+        <view:operation action="<%= BlankCmpAction.CREATE.getURI() %>"
+                        icon="${createIcon}" altText="${createText}" />
+        <view:operationSeparator />
+    </view:operationPane>
 
-	<view:window>
+
+    <view:window>
 		<view:frame>
 			<view:board>
             Cette instance s'appele <strong><c:out
@@ -46,7 +59,20 @@
             Elle se situe dans l'espace <strong><c:out
 						value="${browseContext[0]}" /></strong>.
         	</view:board>
-		</view:frame>
+
+            <view:arrayPane routingAddress="${action.URI}"
+                            title="Liste des objets existants" var="objectsTable">
+                <view:arrayColumn title="Identifiant" />
+                <view:arrayColumn title="Libellé" />
+                <c:forEach items="${objects}" var="o">
+                    <view:arrayLine>
+                        <view:arrayCellText text="${o.id}" />
+                        <view:arrayCellText text="${o.label}" />
+                    </view:arrayLine>
+                </c:forEach>
+            </view:arrayPane>
+
+        </view:frame>
 	</view:window>
 </body>
 </html>

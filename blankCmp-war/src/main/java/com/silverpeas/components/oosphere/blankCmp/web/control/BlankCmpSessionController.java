@@ -40,7 +40,6 @@ public class BlankCmpSessionController extends AbstractComponentSessionControlle
   public BlankCmpSessionController(MainSessionController mainSessionCtrl, ComponentContext componentContext) {
 		super(mainSessionCtrl, componentContext,
 				"com.silverpeas.components.oosphere.blankCmp.multilang.BlankCmpBundle",
-				"com.silverpeas.components.oosphere.blankCmp.settings.BlankCmpIcons",
-				"com.silverpeas.components.oosphere.blankCmp.settings.BlankCmpSettings");
+				"com.silverpeas.components.oosphere.blankCmp.settings.BlankCmpIcons");
 	}
 }
