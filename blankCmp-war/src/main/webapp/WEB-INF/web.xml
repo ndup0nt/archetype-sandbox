@@ -28,7 +28,7 @@
     <display-name>blankCmp component WAR</display-name>
     <servlet>
         <servlet-name>blankCmpRequestRouter</servlet-name>
-        <servlet-class>com.silverpeas.components.oosphere.blankCmp.web.servlets.BlankCmpRequestRouter</servlet-class>
+        <servlet-class>org.silverpeas.components.oosphere.blankCmp.web.servlets.BlankCmpRequestRouter</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>blankCmpRequestRouter</servlet-name>

@@ -43,7 +43,7 @@
   </suite>
   <visible>true</visible>
   <portlet>false</portlet>
-  <instanceClassName>com.silverpeas.components.oosphere.blankCmp.BlankCmpInstanciator</instanceClassName>
+  <instanceClassName>org.silverpeas.components.oosphere.blankCmp.BlankCmpInstanciator</instanceClassName>
 <profiles>
     <profile name="admin">
       <label>

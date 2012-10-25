@@ -21,7 +21,7 @@
 		<version>5.10.1</version>
 	</parent>
 
-	<groupId>com.silverpeas.components.oosphere</groupId>
+	<groupId>org.silverpeas.components.oosphere</groupId>
 	<artifactId>blankCmp</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -52,18 +52,18 @@
 				<version>${core.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.silverpeas.components.oosphere.blankCmp</groupId>
+				<groupId>org.silverpeas.components.oosphere.blankCmp</groupId>
 				<artifactId>blankCmp-config</artifactId>
 				<version>${project.version}</version>
 				<classifier>configuration</classifier>
 			</dependency>
 			<dependency>
-				<groupId>com.silverpeas.components.oosphere.blankCmp</groupId>
+				<groupId>org.silverpeas.components.oosphere.blankCmp</groupId>
 				<artifactId>blankCmp-jar</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.silverpeas.components.oosphere.blankCmp</groupId>
+				<groupId>org.silverpeas.components.oosphere.blankCmp</groupId>
 				<artifactId>blankCmp-war</artifactId>
 				<version>${project.version}</version>
 				<type>war</type>

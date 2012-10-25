@@ -1,4 +1,4 @@
-<%@ page import="com.silverpeas.components.oosphere.blankCmp.web.servlets.BlankCmpAction" %>
+<%@ page import="org.silverpeas.components.oosphere.blankCmp.web.servlets.BlankCmpAction" %>
 <%--
 
     Copyright (C) 2000 - 2011 Silverpeas

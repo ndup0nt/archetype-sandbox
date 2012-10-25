@@ -35,16 +35,16 @@
 	   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
-    <context:component-scan base-package="com.silverpeas.components.oosphere.blankCmp"/>
+    <context:component-scan base-package="org.silverpeas.components.oosphere.blankCmp"/>
 
 	<bean id="blankCmpGlobalProperties" class="com.stratelia.webactiv.util.ResourceLocator">
-		<constructor-arg value="com.silverpeas.components.oosphere.blankCmp.global"/>
+		<constructor-arg value="org.silverpeas.components.oosphere.blankCmp.global"/>
 		<constructor-arg value=""/>
 	</bean>
 
-    <jpa:repositories base-package="com.silverpeas.components.oosphere.blankCmp"
+    <jpa:repositories base-package="org.silverpeas.components.oosphere.blankCmp"
                       transaction-manager-ref="jpaTransactionManager"/>
 
-    <bean class="com.silverpeas.components.oosphere.blankCmp.service.BlankCmpServicesLocator"
+    <bean class="org.silverpeas.components.oosphere.blankCmp.service.BlankCmpServicesLocator"
     		factory-method="getInstance" />
 </beans>

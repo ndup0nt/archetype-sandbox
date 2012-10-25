@@ -28,7 +28,7 @@
     </util:map>
 
     <util:list id="entities">
-        <value>com.silverpeas.components.oosphere.blankCmp</value>
+        <value>org.silverpeas.components.oosphere.blankCmp</value>
     </util:list>
     
 </beans>

@@ -21,22 +21,25 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.silverpeas.blankCmp;
+package org.silverpeas.components.oosphere.blankCmp.web.control;
 
-import com.stratelia.silverpeas.peasCore.ComponentContext;
+import com.stratelia.silverpeas.peasCore.AbstractComponentSessionController;
 import com.stratelia.silverpeas.peasCore.MainSessionController;
-import com.stratelia.webactiv.applicationIndexer.control.ComponentIndexerInterface;
+import com.stratelia.silverpeas.peasCore.ComponentContext;
 
-
-/**
- * This indexer must be located at com.silverpeas.<moduleid>
- * It must be named <Moduleid>Indexer (module id first letter must be converted to upper case)
- */
-public class BlankCmpIndexer implements ComponentIndexerInterface {
-
-  @Override
-  public void index(MainSessionController mainSessionCtrl, ComponentContext context) throws Exception {
-	  //nothing to index so far
-      System.out.println("Reindexing a blankCmp component");
-  }
+public class BlankCmpSessionController extends AbstractComponentSessionController {
+  /**
+   * Standard Session Controller Constructor
+   *
+   *
+   * @param mainSessionCtrl   The user's profile
+   * @param componentContext  The component's profile
+   *
+   * @see
+   */
+  public BlankCmpSessionController(MainSessionController mainSessionCtrl, ComponentContext componentContext) {
+		super(mainSessionCtrl, componentContext,
+				"org.silverpeas.components.oosphere.blankCmp.multilang.BlankCmpBundle",
+				"org.silverpeas.components.oosphere.blankCmp.settings.BlankCmpIcons");
+	}
 }
