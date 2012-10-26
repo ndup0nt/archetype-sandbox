@@ -32,16 +32,16 @@
 		<version>5.11-SNAPSHOT</version>
 	</parent>
 
-	<groupId>org.silverpeas.components.oosphere</groupId>
-	<artifactId>blankCmp</artifactId>
+	<groupId>org.silverpeas.components</groupId>
+	<artifactId>blankApp</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>blankCmp</name>
+	<name>blankApp</name>
 	
     <modules>
-        <module>blankCmp-config</module>
-        <module>blankCmp-jar</module>
-        <module>blankCmp-war</module>
+        <module>blankApp-config</module>
+        <module>blankApp-jar</module>
+        <module>blankApp-war</module>
     </modules>
     
 	<dependencyManagement>
@@ -63,19 +63,19 @@
 				<version>${core.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.silverpeas.components.oosphere.blankCmp</groupId>
-				<artifactId>blankCmp-config</artifactId>
+				<groupId>org.silverpeas.components.blankApp</groupId>
+				<artifactId>blankApp-config</artifactId>
 				<version>${project.version}</version>
 				<classifier>configuration</classifier>
 			</dependency>
 			<dependency>
-				<groupId>org.silverpeas.components.oosphere.blankCmp</groupId>
-				<artifactId>blankCmp-jar</artifactId>
+				<groupId>org.silverpeas.components.blankApp</groupId>
+				<artifactId>blankApp-jar</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.silverpeas.components.oosphere.blankCmp</groupId>
-				<artifactId>blankCmp-war</artifactId>
+				<groupId>org.silverpeas.components.blankApp</groupId>
+				<artifactId>blankApp-war</artifactId>
 				<version>${project.version}</version>
 				<type>war</type>
 			</dependency>
@@ -112,56 +112,15 @@
 				<groupId>com.sun.jersey</groupId>
 				<artifactId>jersey-json</artifactId>
 				<version>${jersey.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.codehaus.jackson</groupId>
-						<artifactId>jackson-core-asl</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.codehaus.jackson</groupId>
-						<artifactId>jackson-mapper-asl</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<artifactId>jackson-jaxrs</artifactId>
 				<groupId>org.codehaus.jackson</groupId>
 				<version>${jackson.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.codehaus.jackson</groupId>
-						<artifactId>jackson-core-asl</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.codehaus.jackson</groupId>
-						<artifactId>jackson-mapper-asl</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>nl.jqno.equalsverifier</groupId>
-				<artifactId>equalsverifier</artifactId>
-				<version>1.1.3</version>
-				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-    <distributionManagement>
-        <repository>
-            <id>oosphere-releases</id>
-            <name>Repository OOsphere</name>
-            <layout>default</layout>
-            <url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>oosphere-snapshots</id>
-            <name>Snapshots Repository OOsphere</name>
-            <layout>default</layout>
-            <url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-    
 	<repositories>
 		<repository>
 			<id>Silverpeas</id>
@@ -170,30 +129,6 @@
 			<url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
 			<releases>
 				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>oosphere-releases</id>
-			<name>Repository OOsphere</name>
-			<layout>default</layout>
-			<url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>oosphere-snapshots</id>
-			<name>Snapshots Repository OOsphere</name>
-			<layout>default</layout>
-			<url>http://sd-23402.dedibox.fr:8081/nexus/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
