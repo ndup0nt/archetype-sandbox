@@ -1,3 +1,26 @@
+/**
+ * Copyright (C) 2000 - 2012 Silverpeas
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * As a special exception to the terms and conditions of version 3.0 of
+ * the GPL, you may redistribute this Program in connection with Free/Libre
+ * Open Source Software ("FLOSS") applications as described in Silverpeas's
+ * FLOSS exception.  You should have received a copy of the text describing
+ * the FLOSS exception, and it is also available here:
+ * "http://www.silverpeas.org/docs/core/legal/floss_exception.html"
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package org.silverpeas.components.oosphere.blankCmp.blankStuff;
 
 import java.net.URI;
@@ -13,6 +36,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.silverpeas.annotation.RequestScoped;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +49,7 @@ import com.silverpeas.web.RESTWebService;
 @Authorized
 public class BlankStuffResource extends RESTWebService {
     @Inject private BlankStuffService blankStuffService;
+    @Value("#{blankCmpGlobalProperties.getString('rest.componentId')}") private String componentId;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,8 +70,7 @@ public class BlankStuffResource extends RESTWebService {
 	@Override
     //user authorization will be checked among this component
 	public String getComponentId() {
-		//TODO get component id as a path template parameter or from a properties file
-		return "blankCmp1";
+		return componentId;
 	}
 
 
