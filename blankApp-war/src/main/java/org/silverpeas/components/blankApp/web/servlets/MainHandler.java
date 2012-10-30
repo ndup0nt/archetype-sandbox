@@ -35,6 +35,7 @@ public class MainHandler extends ActionHandlerSupport implements
     @Override
     public String resolveView(final HttpServletRequest request) {
         request.setAttribute("objects", BlankAppServicesLocator.getInstance().getBlankStuffService().getAllBlankStuffs());
+        request.setAttribute("createObjectURI", BlankAppAction.CREATE.getURI());
         return "welcome.jsp";
     }
 

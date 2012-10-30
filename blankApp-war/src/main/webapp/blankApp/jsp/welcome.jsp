@@ -46,7 +46,7 @@
         <c:set var="createText">
             <fmt:message key="blankApp.createBlankStuff.altText" />
         </c:set>
-        <view:operation action="<%= BlankAppAction.CREATE.getURI() %>"
+        <view:operation action="${createObjectURI}"
                         icon="${createIcon}" altText="${createText}" />
         <view:operationSeparator />
     </view:operationPane>

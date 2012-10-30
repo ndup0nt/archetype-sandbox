@@ -46,7 +46,6 @@
                 </table>
                 <view:buttonPane>
                     <c:url var="postURL" value="/services/blankApp/blankStuff"/>
-                    <c:url var="onSuccessURL" value="<%= BlankAppAction.MAIN.getURI() %>"/>
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $("#blankApp-newBlankStuff-form").submit(function(){

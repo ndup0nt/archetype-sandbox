@@ -33,6 +33,7 @@ public class CreateHandler extends ActionHandlerSupport implements
 
     @Override
     public String resolveView(final HttpServletRequest request) {
+    	request.setAttribute("onSuccessURL", BlankAppAction.MAIN.getURI());
         return "create.jsp";
     }
 
